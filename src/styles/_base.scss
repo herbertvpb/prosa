@@ -1,0 +1,45 @@
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin content {
+  height: 95vh;
+  background-color: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@mixin outline {
+  outline: none;
+  border: 0;
+}
+
+@mixin iconButton {
+  @include flex;
+  @include outline;
+  background: none;
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+
+  .container {
+    @include flex;
+    background-color: $primary-color;
+    height: 100vh;
+    padding: 0 15vh;
+
+    .chat {
+      @include content;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: $chat-color;
+      border: 0;
+      width: 70%;
+    }
+  }
+}
+
